@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIC-TAC-TOE BIOMETRIC AUTH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="/login.css" />
+</head>
+<body>
+    <div class="bg-symbols">
+    <span class="bg-x" style="top:20%; left:10%; font-size:5rem;">X</span>
+    <span class="bg-o" style="top:20%; right:12%; font-size:6rem;">O</span>
+    <span class="bg-x" style="bottom:15%; left:8%; font-size:4rem;">X</span>
+    <span class="bg-o" style="bottom:10%; right:10%; font-size:5rem;">O</span>
+    </div>
+    <div class="container">
+        <div class="logo-block">
+            <div class="logo"><span>X</span> TIC TAC TOE <span>O</span></div>
+            <div class="logo-sub">Biometric Authentication Gateway</div>
+        </div>
+
+        <div class="auth-card">
+            <div class="card-header">
+                <div class="card-title"> Facial Recognition</div>
+                <div class="card-tag">ARENA&nbsp;LOGIN&nbsp;//&nbsp;GRID-3</div>
+            </div>
+            <div class="card-body">
+                <div class="cam-wrapper">
+                    <video id="video" autoplay muted playsinline></video>
+                    <canvas id="canvas" width="640" height="480"></canvas>
+                    <div class="corner corner-tl"></div>
+                    <div class="corner corner-tr"></div>
+                    <div class="corner corner-bl"></div>
+                    <div class="corner corner-br"></div>
+                    <div class="scan-line"></div>
+                    <div class="face-box"></div>
+                    <div class="hud-tl">CAM_01<br>RES 640×480<br>FPS&nbsp;30</div>
+                    <div class="hud-br">BIOMETRIC<br>SCAN ACTIVE<br>████████░░</div>
+                    <div class="proc-overlay" id="proc-overlay">
+                        <div class="pulse-ring"></div>
+                    </div>
+                </div>
+
+                <div class="status-row">
+                    <div class="sdot" id="sdot"></div>
+                    <span id="status">Initialising camera…</span>
+                </div>
+
+                <button class="btn-login" id="login-btn" disabled>
+                    <span>⬡ &nbsp; Authenticate</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="/leaderboard">Leaderboard</a>
+        </div>
+    </div>
+    <script src="/login.js"></script>
+    
+
+</body>
+
+
+
+</html>

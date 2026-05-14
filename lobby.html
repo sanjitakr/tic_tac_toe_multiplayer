@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIC-TAC-TOE // LOBBY</title>
+    <link rel="stylesheet" href="/game.css" />
+</head>
+<body>
+    <div class="bg-symbols">
+    <span class="bg-x" style="top:6%; left:4%; font-size:6rem;">X</span>
+    <span class="bg-o" style="top:12%; left:42%; font-size:4rem;">O</span>
+    <span class="bg-x" style="top:8%; right:6%; font-size:5rem;">X</span>
+
+    <span class="bg-o" style="top:30%; left:10%; font-size:5rem;">O</span>
+    <span class="bg-x" style="top:34%; left:46%; font-size:4.5rem;">X</span>
+    <span class="bg-o" style="top:28%; right:8%; font-size:6rem;">O</span>
+
+    <span class="bg-x" style="top:56%; left:5%; font-size:4rem;">X</span>
+    <span class="bg-o" style="top:60%; left:40%; font-size:5rem;">O</span>
+    <span class="bg-x" style="top:54%; right:6%; font-size:5rem;">X</span>
+
+    <span class="bg-o" style="bottom:18%; left:12%; font-size:5rem;">O</span>
+    <span class="bg-x" style="bottom:10%; left:48%; font-size:6rem;">X</span>
+    <span class="bg-o" style="bottom:8%; right:10%; font-size:5rem;">O</span>
+   </div>   
+
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-bracket">[</span>
+            LOBBY
+            <span class="logo-bracket">]</span>
+        </div>
+        <div class="header-right">
+            <span class="label">OPERATOR</span>
+            <span id="my-uid" class="uid-display">—</span>
+            <span class="status-dot online"></span>
+            <a href="/leaderboard" class="nav-link" style="margin-left:10px;">LEADERBOARD</a>
+        </div>
+    </header>
+
+    <main class="lobby-layout">
+        <section class="panel">
+            <div class="panel-title">
+                <span class="glitch" data-text="// ONLINE OPERATIVES">//&nbsp;ONLINE&nbsp;OPERATIVES</span>
+                <span id="user-count" class="badge">0</span>
+            </div>
+
+            <div id="user-grid" class="user-grid">
+                <!-- populated by lobby.js -->
+            </div>
+
+            <div id="empty-state" class="empty-state">
+                <div class="empty-icon">⬡</div>
+                <p>No other operatives detected</p>
+            </div>
+        </section>
+
+        <section class="panel log-panel">
+            <div class="panel-title">// ACTIVITY LOG</div>
+            <div id="log" class="log"></div>
+        </section>
+    </main>
+
+    <!-- Challenge modal -->
+    <div id="challenge-modal" class="modal hidden">
+        <div class="modal-box">
+            <div class="modal-title">⚡ INCOMING CHALLENGE</div>
+            <p id="challenge-text" class="modal-body"></p>
+            <div class="modal-actions">
+                <button id="accept-btn" class="btn btn-accept">ACCEPT</button>
+                <button id="decline-btn" class="btn btn-decline">DECLINE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Waiting modal -->
+    <div id="waiting-modal" class="modal hidden">
+        <div class="modal-box">
+            <div class="modal-title">⏳ CHALLENGE SENT</div>
+            <p class="modal-body">Waiting for opponent response…</p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="/lobby.js"></script>
+</body>
+</html>

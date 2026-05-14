@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIC-TAC-TOE // LEADERBOARD</title>
+    <link rel="stylesheet" href="/game.css" />
+</head>
+<body>
+    <div class="bg-symbols">
+    <span class="bg-x" style="top:6%; left:4%; font-size:6rem;">X</span>
+    <span class="bg-o" style="top:12%; left:42%; font-size:4rem;">O</span>
+    <span class="bg-x" style="top:8%; right:6%; font-size:5rem;">X</span>
+
+    <span class="bg-o" style="top:30%; left:10%; font-size:5rem;">O</span>
+    <span class="bg-x" style="top:34%; left:46%; font-size:4.5rem;">X</span>
+    <span class="bg-o" style="top:28%; right:8%; font-size:6rem;">O</span>
+
+    <span class="bg-x" style="top:56%; left:5%; font-size:4rem;">X</span>
+    <span class="bg-o" style="top:60%; left:40%; font-size:5rem;">O</span>
+    <span class="bg-x" style="top:54%; right:6%; font-size:5rem;">X</span>
+
+    <span class="bg-o" style="bottom:18%; left:12%; font-size:5rem;">O</span>
+    <span class="bg-x" style="bottom:10%; left:48%; font-size:6rem;">X</span>
+    <span class="bg-o" style="bottom:8%; right:10%; font-size:5rem;">O</span>
+   </div>   
+
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-bracket">[</span>LEADERBOARD<span class="logo-bracket">]</span>
+            <span class="logo-sub">RANKINGS</span>
+        </div>
+        <div class="header-right">
+            <a href="/lobby" class="nav-link">◀ LOBBY</a>
+            <a href="/login-page" class="nav-link">LOGIN</a>
+        </div>
+    </header>
+
+    <div class="lb-layout">
+        <div class="panel">
+            <div class="panel-title">
+                <span class="glitch" data-text="GLOBAL LEADERBOARD"> GLOBAL LEADERBOARD</span>
+                <span id="player-count" class="badge">—</span>
+            </div>
+
+            <table class="lb-table" id="lb-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Operator</th>
+                        <th>UID</th>
+                        <th class="right">ELO</th>
+                        <th class="right">W</th>
+                        <th class="right">L</th>
+                        <th class="right">D</th>
+                        <th class="right">Games</th>
+                    </tr>
+                </thead>
+                <tbody id="lb-body">
+                    <tr><td colspan="8" class="lb-empty">Loading operative data…</td></tr>
+                </tbody>
+            </table>
+
+            <div class="lb-refresh">
+                Last updated: <span id="last-updated">—</span> &nbsp;·&nbsp;
+                <a onclick="loadLeaderboard()">↺ Refresh</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/leaderboard.js"></script>
+</body>
+
+
+
+</html>

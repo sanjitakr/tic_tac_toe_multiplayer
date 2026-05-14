@@ -78,12 +78,12 @@ function handleMessage(msg) {
             challengeText.textContent =
                 `${msg.from_name} (${msg.from_uid}) wants to challenge you to a match.`;
             challengeModal.classList.remove("hidden");
-            addLog(`⚡ Challenge received from ${msg.from_name}.`, "warn");
+            addLog(` Challenge received from ${msg.from_name}.`, "warn");
             break;
 
         case "challenge_accepted":
             waitingModal.classList.add("hidden");
-            addLog(`✅ Challenge accepted. Entering arena…`, "event");
+            addLog(` Challenge accepted. Entering arena…`, "event");
             sessionStorage.setItem("room_id", msg.room_id);
             sessionStorage.setItem("my_symbol", msg.symbol);
             location.href = `/game?room_id=${encodeURIComponent(msg.room_id)}&uid=${encodeURIComponent(MY_UID)}`;
@@ -91,11 +91,11 @@ function handleMessage(msg) {
 
         case "challenge_declined":
             waitingModal.classList.add("hidden");
-            addLog(`❌ Challenge declined by ${msg.from_uid}.`, "warn");
+            addLog(` Challenge declined by ${msg.from_uid}.`, "warn");
             break;
 
         case "error":
-            addLog(`⚠ ${msg.message}`, "warn");
+            addLog(` ${msg.message}`, "warn");
             waitingModal.classList.add("hidden");
             break;
     }
@@ -139,7 +139,7 @@ function buildCard(user, isSelf) {
 
 // ---- Challenge flow ----
 function sendChallenge(targetUid, targetName) {
-    addLog(`⚡ Challenge sent to ${targetName}…`);
+    addLog(` Challenge sent to ${targetName}…`);
     send({ type: "challenge", target_uid: targetUid });
     waitingModal.classList.remove("hidden");
 }
@@ -148,7 +148,7 @@ acceptBtn.addEventListener("click", () => {
     if (!pendingChallengeFrom) return;
     challengeModal.classList.add("hidden");
     send({ type: "challenge_response", from_uid: pendingChallengeFrom, accepted: true });
-    addLog("✅ Challenge accepted. Awaiting room…", "event");
+    addLog(" Challenge accepted. Awaiting room…", "event");
     pendingChallengeFrom = null;
 });
 
@@ -156,7 +156,7 @@ declineBtn.addEventListener("click", () => {
     if (!pendingChallengeFrom) return;
     challengeModal.classList.add("hidden");
     send({ type: "challenge_response", from_uid: pendingChallengeFrom, accepted: false });
-    addLog("❌ Challenge declined.");
+    addLog(" Challenge declined.");
     pendingChallengeFrom = null;
 });
 

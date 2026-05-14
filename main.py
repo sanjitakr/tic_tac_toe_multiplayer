@@ -31,7 +31,7 @@ def run_pipeline():
             else:
                 print(f"[SKIPPED IMAGE] {uid}")
 
-    print("✅ Pipeline completed")
+    print("Pipeline completed")
 
 if __name__ == "__main__":
     run_pipeline()
